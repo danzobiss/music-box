@@ -20,6 +20,16 @@ function Musicas() {
 
   }, []);
 
+  function deletar(id) {
+    api.delete(`/${id}`).then(res => {
+      alert("Deletado com sucesso");
+      setMusicas(musicas.filter(musica => musica.id !== id))
+    }).catch(erro =>{
+      alert("Deu ruim");
+      console.log(erro)
+    })
+  }
+
 
   return (
     <>
@@ -44,6 +54,7 @@ function Musicas() {
                 imagem={musica.imagem}
                 id={musica.id}
                 key={musica.id}
+                deletar={deletar}
               />
             ))
           }

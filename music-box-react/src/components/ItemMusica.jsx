@@ -15,7 +15,7 @@ function ItemMusica(props) {
       <div className="card-music" style={imagemFundo}>
         <div className="icons">
           <img src={editIcon} alt="" />
-          <img src={deleteIcon} alt="" />
+          <img src={deleteIcon} alt="" onClick={() => props.deletar(props.id)}/>
         </div>
         <div className="info-music">
           <p>
